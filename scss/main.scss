@@ -24,14 +24,17 @@ font-size: 18px;
 
 .hero-scene {
   position: relative;
-  min-height: 60vh;
-  background: url('../images/FondHeroScene.jpg') center/cover no-repeat;
-
+  min-height: 60vh;  /* ajoute cette ligne */
   &::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4); /* overlay foncé transparent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/FondHeroScene.jpg) center/cover no-repeat;
+    filter: brightness(0.3);
+    z-index: 0;
   }
 
   * {
@@ -40,14 +43,13 @@ font-size: 18px;
   }
 
   .hero-scene-content {
-    height: 100%; /* ou 300px, mais ici 100% du conteneur c’est mieux */
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 }
-
 
 .image-card{
     position:relative;
