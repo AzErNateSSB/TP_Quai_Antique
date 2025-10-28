@@ -24,6 +24,7 @@ font-size: 18px;
 
 .hero-scene{
     position: relative;
+    min-height:auto
     &::before{
         content:"";
         position: absolute;
