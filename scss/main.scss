@@ -22,33 +22,32 @@ font-family: $font-family-serif;
 font-size: 18px;
 }
 
-.hero-scene {
-  position: relative;
-  min-height: 60vh;  /* ajoute cette ligne */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../images/FondHeroScene.jpg) center/cover no-repeat;
-    filter: brightness(0.3);
-    z-index: 0;
-  }
-
-  * {
+.hero-scene{
     position: relative;
-    z-index: 1;
-  }
+    &::before{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url(../images/FondHeroScene.jpg);
+        background-size: cover;
+        filter: brightness(0.3);
+    }
 
-  .hero-scene-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    *{
+        //Positionner les éléments devant le ::before
+        position:relative;
+    }
+
+    .hero-scene-content{
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .image-card{
