@@ -24,25 +24,19 @@ font-size: 18px;
 
 .hero-scene {
   position: relative;
-  min-height: 60vh; /* 👈 ajoute cette ligne */
+  min-height: 60vh;
+  background: url('../images/FondHeroScene.jpg') center/cover no-repeat;
+
   &::before {
-    content:"";
+    content: "";
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-image: url(../images/FondHeroScene.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(0.3);
-    z-index: 0; /* 👈 pour éviter que le pseudo recouvre le contenu */
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* overlay foncé transparent */
   }
 
   * {
     position: relative;
-    z-index: 1; /* 👈 pour être au-dessus du fond */
+    z-index: 1;
   }
 
   .hero-scene-content {
