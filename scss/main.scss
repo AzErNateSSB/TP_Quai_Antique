@@ -22,34 +22,38 @@ font-family: $font-family-serif;
 font-size: 18px;
 }
 
-.hero-scene{
+.hero-scene {
+  position: relative;
+  min-height: 60vh; /* 👈 ajoute cette ligne */
+  &::before {
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: url(../images/FondHeroScene.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.3);
+    z-index: 0; /* 👈 pour éviter que le pseudo recouvre le contenu */
+  }
+
+  * {
     position: relative;
-    min-height:auto;
-    &::before{
-        content:"";
-        position: absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background-image: url(../images/FondHeroScene.jpg);
-        background-size: cover;
-        filter: brightness(0.3);
-    }
+    z-index: 1; /* 👈 pour être au-dessus du fond */
+  }
 
-    *{
-        //Positionner les éléments devant le ::before
-        position:relative;
-    }
-
-    .hero-scene-content{
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  .hero-scene-content {
+    height: 100%; /* ou 300px, mais ici 100% du conteneur c’est mieux */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
 
 .image-card{
     position:relative;
