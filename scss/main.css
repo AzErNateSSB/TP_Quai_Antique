@@ -12003,6 +12003,7 @@ p {
 
 .hero-scene {
   position: relative;
+  margin-bottom: 15px;
 }
 .hero-scene::before {
   content: "";
